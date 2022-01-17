@@ -1,0 +1,24 @@
+{
+    "name": "vovchinnikov/lesson4",
+    "authors": [
+        {
+            "name": "Vyacheslav Ovchinnikov",
+            "email": "vovchinnikov@plesk.com"
+        }
+    ],
+    "require": {
+        "squizlabs/php_codesniffer": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "MyApp\\": "src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "9.5"
+    },
+    "scripts": {
+        "test": "phpunit",
+        "lint": "phpcs --standard=PSR12 ./src"
+    }
+}
