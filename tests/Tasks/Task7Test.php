@@ -1,5 +1,7 @@
 <?php
 
+namespace MyApp\Tests\Tasks;
+
 use PHPUnit\Framework\TestCase;
 
 class Task7Test extends TestCase

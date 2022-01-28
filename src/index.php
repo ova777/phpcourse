@@ -2,27 +2,25 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-//function myAutoloader(string $name)
-//{
-//    $filename = __DIR__.'/'.$name . '.php';
-//
-//    echo 'Try load file '.$filename, PHP_EOL;
-//    require_once $filename;
-//}
-//
-//spl_autoload_register('myAutoloader');
 
-//require_once 'Foo.php';
+$nikolay = new \MyApp\Kolya();
+$nikolay->eat();
+$nikolay->eat();
+$nikolay->sayWeight();
 
-//$foo = new Foo();
-//$foo->test();
+$mikola = new \MyApp\Kolya();
+$mikola->sayWeight();
 
-//$bar = new Core\Bar();
-//$bar->test();
+(new \MyApp\Kolya());
 
-//(new MyApp\Foo())->test();
-//(new MyApp\Core\Bar())->test();
-//(new MyApp\Core\System\Main())->test();
+\MyApp\Kolya::sayCountKolyas();
 
-//echo (new \MyApp\Tasks\Task1())->binarySum('111', '100');
-//echo (int)(new \MyApp\Tasks\Task7())->isHappy('101100');
+
+$config = require __DIR__ . '/../config.php';
+
+$loggerFactory = new \MyApp\Logger\LoggerFactory($config);
+$logger = $loggerFactory->createLogger();
+
+$app = new \MyApp\App($logger);
+
+$app->run();
